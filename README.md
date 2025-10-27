@@ -9,8 +9,8 @@ we are doing automation on the "https://testautomationpractice.blogspot.com/"
 
 Steps for work flow: 
 - Create new ticket in Issues section with Story description
-- In local create seperate branch for every issue using this format "{issue no}-{issue name using '-' instead of space in small case}"
-- After working on ticket raised a NEW PR using following git command 
+- In local create seperate branch for every issue using this format "{issue no}-{issue name using '-' instead of space in small case}" using "git switch -c {branch_name}"
+- After working on ticket raised a NEW PR using following git command
    - git status
    - git add <file>
    - git commit -m "commit message"
