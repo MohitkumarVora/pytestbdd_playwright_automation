@@ -5,3 +5,6 @@ class HomeLocators:
 
         # Selector for the URL
         BASE_URL = "https://testautomationpractice.blogspot.com/"
+
+        # Selector for Home page menu options
+        udemy_courses_menu_link =

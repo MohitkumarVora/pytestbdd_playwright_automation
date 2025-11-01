@@ -4,6 +4,8 @@ import pytest
 import yaml
 from pathlib import Path
 from playwright.sync_api import sync_playwright
+import os
+from pytest_bdd import scenarios
 
 
 CONFIG_PATH = Path(__file__).parent / "configs" / "config.yaml"
@@ -13,6 +15,14 @@ def config():
     with open(CONFIG_PATH, "r") as f:
         data = yaml.safe_load(f)
     return data
+
+# Automatically discover and load all feature files
+FEATURE_DIR = os.path.join(os.path.dirname(__file__), "features")
+
+for filename in os.listdir(FEATURE_DIR):
+    if filename.endswith(".feature"):
+        feature_path = os.path.join(FEATURE_DIR, filename)
+        scenarios(feature_path)
 
 @pytest.fixture(scope="session")
 def browser_instance(config):
