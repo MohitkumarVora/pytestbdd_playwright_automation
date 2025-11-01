@@ -16,13 +16,14 @@ def config():
         data = yaml.safe_load(f)
     return data
 
-# Automatically discover and load all feature files
-FEATURE_DIR = os.path.join(os.path.dirname(__file__), "features")
-
-for filename in os.listdir(FEATURE_DIR):
-    if filename.endswith(".feature"):
-        feature_path = os.path.join(FEATURE_DIR, filename)
-        scenarios(feature_path)
+# # Automatically discover and load all feature files
+# FEATURE_DIR = os.path.join(os.path.dirname(__file__), "tests", "features")
+#
+#
+# for filename in os.listdir(FEATURE_DIR):
+#     if filename.endswith(".feature"):
+#         feature_path = os.path.join(FEATURE_DIR, filename)
+#         scenarios(feature_path)
 
 @pytest.fixture(scope="session")
 def browser_instance(config):
